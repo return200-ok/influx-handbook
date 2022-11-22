@@ -120,3 +120,5 @@ from(bucket: "gitlab")
   |> keep(columns: ["created_at"])
   |> map(fn:(r) => ({r with "created_at": time(v: r["created_at"])}))
   |> filter(fn: (r) => r["created_at"] < date.sub(d: 48h, from: now()))
+
+  
